@@ -1,0 +1,15 @@
+<apex:page lightningStylesheets="true" controller="ProjectRelatedChatterController">  
+    <!--chatter:feed entityId="{!recordId}"/-->  
+    <apex:includeLightning />
+    <div  id="LightningCompContainer" />
+    <script>
+    $Lightning.use("c:chatterFeedBoxApp", function() {
+        $Lightning.createComponent("c:chatterFeedBox",
+                                   {recordId:"{!recordId}"},
+                                   "LightningCompContainer",
+                                   function(component) {
+                                       component.set("v.recordId",'{!$CurrentPage.parameters.id}');
+                                   });
+    });
+    </script>
+</apex:page>

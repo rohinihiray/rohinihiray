@@ -1,0 +1,5 @@
+<apex:page lightningStylesheets="true">
+  
+  <chatter:feed entityId="{!$User.Id}"/>
+
+</apex:page>
